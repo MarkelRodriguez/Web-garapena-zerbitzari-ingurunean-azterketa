@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center><h1>Liburua Gehitu</h1></center>
+    <br><br>
+
+    <form action="gehituerregistroalokairua/" method="post">
+        {% csrf_token %}
+        
+        
+        <label class="form-label">Pertsona:</label>
+        <select id="pertsona" name="pertsona"> 
+            {% for pertsona in pertsonak %}
+                <option value="{{pertsona.dni}}">{{pertsona.izena}} {{pertsona.abizena}}</option>
+            {% endfor %}
+        </select>
+        <br/><br/>
+        <label class="form-label">Etxea:</label>
+        <select id="etxea" name="etxea"> 
+            {% for etxea in etxeak %}
+                <option value="{{etxea.id}}">{{etxea.izena}} </option>
+            {% endfor %}
+        </select>
+        <br/><br/>
+        <label class="form-label">Hasiera data:</label>
+        <input class="form-control" type="date" name="alokairu_data_hasi" required/>
+        <br/><br/>
+        <label class="form-label">Bukaera data:</label>
+        <input class="form-control" type="date" name="alokairu_data_bukatu" required/>
+        <button type="submit" value="submit">Alokaiua sortu</button>
+        
+       
+    </form>
+{% endblock content %}

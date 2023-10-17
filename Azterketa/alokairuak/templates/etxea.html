@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table border="1">
+    <tr>
+        
+        <th>Izena</th>
+        <th>Herria</th>
+        <th>Pertsona_kop</th>
+    </tr>
+    {% for etxea in etxeak %}
+    <tr>
+           
+
+        
+        <td>{{etxea.izena}}</td>
+        <td>{{etxea.herria}}</td>
+        <td>{{etxea.pertsona_kop}}</td>
+        
+           
+        <td>
+            <a href="ezabatuetxea/{{etxea.id}}" color="red">ezabatu</a>
+        </td>
+        <td>
+            <a href="eguneratuetxea/{{etxea.id}}/"> aldatu</a>
+        </td>
+    </tr>
+
+
+
+
+
+    {% endfor %}
+</table>
+<a href="gehituetxea/">Gehitu etxea</a>
+<a href="/index/">Alokairuak ikusi</a>
+{% endblock content %}

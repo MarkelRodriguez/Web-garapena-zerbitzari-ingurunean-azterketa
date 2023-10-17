@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table border="1">
+    <tr>
+        <th>Dni</th>
+        <th>Izena</th>
+        <th>Abizena</th>
+        <th>Emaila</th>
+    </tr>
+    {% for pertsona in pertsonak %}
+    <tr>
+           
+
+        <td>{{pertsona.dni}}</td>
+        <td>{{pertsona.izena}}</td>
+        <td>{{pertsona.abizena}}</td>
+        <td>{{pertsona.emaila}}</td>
+           
+        <td>
+            <a href="ezabatupertsona/{{pertsona.dni}}" color="red">ezabatu</a>
+        </td>
+        <td>
+            <a href="eguneratupertsona/{{pertsona.dni}}"> aldatu</a>
+        </td>
+    </tr>
+
+
+
+
+
+    {% endfor %}
+</table>
+<a href="gehitupertsona/">Gehitu pertsona</a>
+<a href="/index/">Alokairuak ikusi</a>
+{% endblock content %}

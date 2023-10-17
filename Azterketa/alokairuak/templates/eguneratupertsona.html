@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/eguneratuerregistropertsona/{{pertsona.dni}}" method="post">
+    {% csrf_token %} <label class="form-label">DNI:</label>
+    <input type="text" name="dni" class="form-control" value="{{pertsona.dni}}" required/>
+    <br /><br />
+    <label class="form-label">Izena:</label>
+    <input type="text" name="izena" class="form-control" value="{{pertsona.izena}}"required/>
+    <br/><br/>
+    <label class="form-label">Abizena:</label>
+    <input type="text" name="abizena" class="form-control" value="{{pertsona.abizena}}" required/>
+    <br/><br/>
+    <label class="form-label">Emaila:</label>
+    <input type="text" name="emaila" class="form-control" value="{{pertsona.emaila}}" required/>
+    <br/><br/>
+    <button type="submit" value="submit">Pertsona eguneratu</button>
+</form>
+{% endblock content %}

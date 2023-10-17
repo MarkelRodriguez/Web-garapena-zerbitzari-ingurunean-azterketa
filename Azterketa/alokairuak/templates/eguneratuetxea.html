@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/eguneratuerregistroetxea/{{etxea.id}}" method="post">
+    {% csrf_token %} 
+    <label class="form-label">Izena:</label>
+    <input type="text" name="izena" class="form-control" value="{{etxea.izena}}" required/>
+    <br/><br/>
+    <label class="form-label">Herria:</label>
+    <input type="text" name="herria" class="form-control"value="{{etxea.herria}}" required/>
+    <br/><br/>
+    <label class="form-label">Pertsona_kop:</label>
+    <input type="number" name="pertsonakop" class="form-control" value="{{etxea.pertsona_kop}}" required/>
+    <br/><br/>
+    <button type="submit" value="submit">Etxea eguneratu</button>
+</form>
+{% endblock content %}

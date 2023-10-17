@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table border="1">
+    <tr>
+        <th>Pertsona</th>
+        <th>Etxea</th>
+        <th>Hasiera data</th>
+        <th>Bukaera data</th>
+    </tr>
+    {% for alokairua in alokairuak %}
+    <tr>
+           
+
+        <td>{{alokairua.pertsona.izena}} {{alokairua.pertsona.abizena}}</td>
+        <td>{{alokairua.etxea}}</td>
+        <td>{{alokairua.alokairu_data_hasi}}</td>
+        <td>{{alokairua.alokairu_data_bukatu}}</td>
+           
+        
+    </tr>
+
+
+
+
+
+    {% endfor %}
+</table>
+<a href="/pertsona/">Pertsonak ikusi</a>
+<a href="/gehitualokairua/">Gehitu alokairua</a>
+<a href="/etxea/">Etxeak ikusi</a>
+{% endblock content %}
